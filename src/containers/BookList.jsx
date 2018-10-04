@@ -7,7 +7,15 @@ import MenuItem from "@material-ui/core/MenuItem";
 
 import { selectBook } from "../actions/index";
 
-class BookList extends Component {
+import type { Dispatch } from "redux";
+
+type Props = {
+  classes: any,
+  books: Array<Book>,
+  selectBook: Function
+};
+
+class BookList extends Component<Props> {
   render() {
     const { classes, books, selectBook } = this.props;
 
@@ -43,7 +51,7 @@ const mapAppStateToProps = appState => ({
   books: appState.books
 });
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch: Dispatch<*>) => ({
   selectBook: book => dispatch(selectBook(book))
 });
 

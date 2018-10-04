@@ -5,7 +5,12 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 
-class BookDetail extends Component {
+type Props = {
+  classes: any,
+  book: Book
+};
+
+class BookDetail extends Component<Props> {
   render() {
     const { classes, book } = this.props;
 
